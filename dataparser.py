@@ -46,7 +46,7 @@ class DataParser(object):
             clean_list.append(item[0])
         return clean_list
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     import doctest
 
     doctest.testmod(verbose=True)

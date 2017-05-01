@@ -151,7 +151,7 @@ class CmdView(View, Cmd):
         """
         self.__controller.serialize(line)
 
-if __name__ == '__main__':
+if __name__ == '__main__':  # pragma: no cover
     import doctest
 
     doctest.testmod(verbose=True)

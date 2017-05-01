@@ -1,0 +1,7 @@
+empid=D011
+gender=M
+age=29
+sales=722
+bmi=Normal
+salary=320
+birthday=23-11-1987
