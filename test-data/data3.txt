@@ -1,0 +1,7 @@
+empid=D013
+gender=F
+age=22
+sales=862
+bmi=Normal
+salary=520
+birthday=12-23-1990

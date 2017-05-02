@@ -1,0 +1,15 @@
+empid=D012
+gender=M
+age=29
+sales=722
+bmi=Normal
+salary=320
+birthday=23-11-1987
+
+empid=E013
+gender=F
+age=22
+sales=900
+bmi=Underweight
+salary=877
+birthday=22-12-1985

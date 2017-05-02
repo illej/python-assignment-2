@@ -124,7 +124,7 @@ class CmdView(View, Cmd):
             bmi         Retrieves all body mass indexes
             birthday    Retrieves all birthday
         """
-        self.__controller.get(line)
+        self.__controller.query(line)
 
     def do_rebuild_db(self, line):
         """

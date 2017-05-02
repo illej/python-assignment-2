@@ -8,6 +8,7 @@ from dataparser import DataParser
 from validator import Validator
 from databaseview import DatabaseView
 from visualiser import Visualiser
+from view import View
 
 
 class TestInterpreter(unittest.TestCase):
@@ -44,6 +45,29 @@ class TestInterpreter(unittest.TestCase):
         self.controller.validate()
         self.controller.commit()
         sys.stdout = sys.__stdout__
+
+    def concreter(self, abclass): # pragma: no cover
+        # """
+        # >>> import abc
+        # >>> class Abstract(metaclass=abc.ABCMeta):
+        # ...     @abc.abstractmethod
+        # ...     def bar(self):
+        # ...        return None
+        #
+        # >>> c = concreter(Abstract)
+        # >>> c.__name__
+        # 'dummy_concrete_Abstract'
+        # >>> c().bar() # doctest: +ELLIPSIS
+        # (<abc_utils.Abstract object at 0x...>, (), {})
+        # """
+        if not "__abstractmethods__" in abclass.__dict__:
+            return abclass
+        new_dict = abclass.__dict__.copy()
+        for abstractmethod in abclass.__abstractmethods__:
+            # replace each abc method or property with an identity function:
+            new_dict[abstractmethod] = lambda x, *args, **kw: (x, args, kw)
+        # creates a new class, with the overriden ABCs:
+        return type("dummy_concrete_%s" % abclass.__name__, (abclass,), new_dict)
 
     # DataParser
     def test_01_parser_to_list(self):
@@ -281,7 +305,229 @@ class TestInterpreter(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(expected, actual)
 
+    # FileView
+    def test_22_fileview_get_cwd(self):
+        captured = io.StringIO()
+        sys.stdout = captured
 
+        self.controller.get('test-data')
+        self.controller.get('cwd')
 
-if __name__ == '__main__':
+        expected = "D:\pr301_workspace\\assignment-2\\test-data\n" \
+                   "D:\pr301_workspace\\assignment-2\\test-data\n" \
+                   "test-folder\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_23_fileview_get_filelist(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.controller.get('')
+
+        expected = "['data.txt', 'data2.txt', 'data3.txt', 'datalist.txt', 'file.txt']\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_24_fileview_get_cd_fail(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.controller.get('poopsickles')
+
+        expected = "fview: [WinError 2] The system cannot find the file specified: './poopsickles'\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_25_fileview_set(self):
+        self.file_view.set()
+
+    # not working!
+    def test_26_databaseview_initiase_fail(self):
+        sys.stdout = io.StringIO()
+
+        self.controller.get('..')
+
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        DatabaseView(1)
+
+        expected = 'argument 1 must be str, not int\n'
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_27_databaseview_set_fail(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.db.set(['hi', 'poop', 'socks'])
+
+        expected = ''
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_28_databaseview_get_fail(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.db.get('pickles')
+
+        expected = 'no such column: pickles\n'
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_29_view(self):
+        c = self.concreter(View)
+        expected = 'dummy_concrete_View'
+        actual = c.__name__
+
+        self.assertEqual(expected, actual)
+
+    def test_30_view_get(self):
+        View.__abstractmethods__ = set()
+
+        self.assertRaises(NotImplementedError, View().get, 'socks')
+
+    def test_31_view_set(self):
+        View.__abstractmethods__ = set()
+
+        self.assertRaises(NotImplementedError, View().set, 'pants')
+
+    # CmdView
+    def test_32_cmdview_init_get(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        sys.argv = ['-g']
+        self.cmd_view.set_controller(self.controller)
+
+        expected = "['file.txt']\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_33_cmdview_init_rebuild(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        sys.argv = ['-r']
+        self.cmd_view.set_controller(self.controller)
+
+        expected = '-- db dropped\n-- db rebuit\n'
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_34_cmdview_init_validate(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        sys.argv = ['-v']
+        self.cmd_view.set_controller(self.controller)
+
+        expected = '-- Data validation successful!\n'
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_35_cmdview_init_commit(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        sys.argv = ['-c']
+        self.cmd_view.set_controller(self.controller)
+
+        expected = ''
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_36_cmdview_init_display(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        sys.argv = ['-d', 'sales']
+        self.cmd_view.set_controller(self.controller)
+
+        regex = '^file://C:/Users/Elliot/AppData/Local/Temp/.*$'
+        text = captured.getvalue()
+
+        sys.argv = set()
+        sys.stdout = sys.__stdout__
+        self.assertRegex(text, regex)
+
+    def test_37_cmdview_do_get(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.cmd_view.do_get('pickle-pee')
+
+        expected = "cmd: 'NoneType' object has no attribute 'get'\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_38_cmdview_set(self):
+        self.cmd_view.set()
+
+    def test_39_cmdview_quit(self):
+        self.cmd_view.do_quit('')
+
+    def test_40_cmdview_query(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.cmd_view.set_controller(self.controller)
+        self.cmd_view.do_query('*')
+
+        expected = "[('D011', 'M', 29, 722, 'Normal', 320, '23-11-1987')]\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_41_cmdview_serial(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.cmd_view.set_controller(self.controller)
+        self.cmd_view.do_serialize('puppies')
+
+        expected = "-- Database pickled!\n\t-> as filename: puppies.pickle.\n"
+        actual = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertEqual(expected, actual)
+
+    def test_42_cmdview_help(self):
+        captured = io.StringIO()
+        sys.stdout = captured
+
+        self.cmd_view.help_cmd()
+
+        regex = 'Syntax: python main.py'
+        text = captured.getvalue()
+
+        sys.stdout = sys.__stdout__
+        self.assertRegex(text, regex)
+
+if __name__ == '__main__':  # pragma: no cover
     unittest.main(verbosity=True)
