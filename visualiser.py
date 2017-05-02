@@ -3,6 +3,17 @@ import pygal
 
 # TODO: would be nice to build titles in a separate function!
 class Visualiser(object):
+
+    def display_chart(self, input_param, data_set_dict):
+        if input_param == '-b':
+            self.display_bar(data_set_dict)
+        elif input_param == '-l':
+            self.display_line(data_set_dict)
+        elif input_param == '-p':
+            self.display_pie(data_set_dict)
+        elif input_param == '-r':
+            self.display_radar(data_set_dict)
+
     def display_bar(self, data_dict):
         title_builder = []
         title = ""
