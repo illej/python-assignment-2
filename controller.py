@@ -78,6 +78,8 @@ class Controller(object):
 
     def query(self, line):
         print(self.__db.get(line))
+        # clean = self.__parser.scrub_db_list(self.__db.get(line))
+        # print(clean)
 
     def serialize(self, line):
         try:
