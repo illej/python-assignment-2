@@ -595,20 +595,13 @@
 <p id="n524" class="stm run hide_run"><a href="#n524">524</a></p>
 <p id="n525" class="pln"><a href="#n525">525</a></p>
 <p id="n526" class="stm run hide_run"><a href="#n526">526</a></p>
-<p id="n527" class="pln"><a href="#n527">527</a></p>
+<p id="n527" class="stm run hide_run"><a href="#n527">527</a></p>
 <p id="n528" class="pln"><a href="#n528">528</a></p>
-<p id="n529" class="pln"><a href="#n529">529</a></p>
-<p id="n530" class="pln"><a href="#n530">530</a></p>
+<p id="n529" class="stm run hide_run"><a href="#n529">529</a></p>
+<p id="n530" class="stm run hide_run"><a href="#n530">530</a></p>
 <p id="n531" class="pln"><a href="#n531">531</a></p>
-<p id="n532" class="pln"><a href="#n532">532</a></p>
-<p id="n533" class="pln"><a href="#n533">533</a></p>
-<p id="n534" class="stm run hide_run"><a href="#n534">534</a></p>
-<p id="n535" class="pln"><a href="#n535">535</a></p>
-<p id="n536" class="stm run hide_run"><a href="#n536">536</a></p>
-<p id="n537" class="stm run hide_run"><a href="#n537">537</a></p>
-<p id="n538" class="pln"><a href="#n538">538</a></p>
-<p id="n539" class="exc"><a href="#n539">539</a></p>
-<p id="n540" class="exc"><a href="#n540">540</a></p>
+<p id="n532" class="exc"><a href="#n532">532</a></p>
+<p id="n533" class="exc"><a href="#n533">533</a></p>
 
             </td>
             <td class="text">
@@ -1137,21 +1130,14 @@
 <p id="t523" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t524" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span><span class="op">.</span><span class="nam">help_cmd</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t525" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t526" class="stm run hide_run">        <span class="nam">expected</span> <span class="op">=</span> <span class="str">'Syntax: python main.py [flag] .. (up to 5) [data] .. (up to 3)'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t527" class="pln">                   <span class="str">'\n\t:args: Used to invoke functionality from the command-line.'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t528" class="pln">                   <span class="str">'\t-g\t\tRead files from cwd'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t529" class="pln">                   <span class="str">'\t-v\t\tValidate data'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t530" class="pln">                   <span class="str">'\t-c\t\tCommit valid data to database'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t531" class="pln">                   <span class="str">'\t-d [data]*\tDisplay default chart (bar chart). Can be called if database is not empty.'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t532" class="pln">                   <span class="str">'\t\t\t\t* up to 3 sets'</span> <span class="xx">\</span><span class="strut">&nbsp;</span></p>
-<p id="t533" class="pln">                   <span class="str">'\n\t\tNOTE: -r, -g, -v, -c, must be used in order.'</span><span class="strut">&nbsp;</span></p>
-<p id="t534" class="stm run hide_run">        <span class="nam">actual</span> <span class="op">=</span> <span class="nam">captured</span><span class="op">.</span><span class="nam">getvalue</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t535" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t536" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">__stdout__</span><span class="strut">&nbsp;</span></p>
-<p id="t537" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertEqual</span><span class="op">(</span><span class="nam">expected</span><span class="op">,</span> <span class="nam">actual</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t538" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t539" class="exc"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span>  <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
-<p id="t540" class="exc">    <span class="nam">unittest</span><span class="op">.</span><span class="nam">main</span><span class="op">(</span><span class="nam">verbosity</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t526" class="stm run hide_run">        <span class="nam">regex</span> <span class="op">=</span> <span class="str">'Syntax: python main.py'</span><span class="strut">&nbsp;</span></p>
+<p id="t527" class="stm run hide_run">        <span class="nam">text</span> <span class="op">=</span> <span class="nam">captured</span><span class="op">.</span><span class="nam">getvalue</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t528" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t529" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">__stdout__</span><span class="strut">&nbsp;</span></p>
+<p id="t530" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertRegex</span><span class="op">(</span><span class="nam">text</span><span class="op">,</span> <span class="nam">regex</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t531" class="pln"><span class="strut">&nbsp;</span></p>
+<p id="t532" class="exc"><span class="key">if</span> <span class="nam">__name__</span> <span class="op">==</span> <span class="str">'__main__'</span><span class="op">:</span>  <span class="com"># pragma: no cover</span><span class="strut">&nbsp;</span></p>
+<p id="t533" class="exc">    <span class="nam">unittest</span><span class="op">.</span><span class="nam">main</span><span class="op">(</span><span class="nam">verbosity</span><span class="op">=</span><span class="key">True</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
         </tr>
@@ -1162,7 +1148,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-02 16:04
+            created at 2017-05-02 20:19
         </p>
     </div>
 </div>

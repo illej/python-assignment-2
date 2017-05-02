@@ -7,6 +7,16 @@ class Controller(object):
         self.__db = db
         self.__vis = vis
 
+    def __display_chart(self, input_param, data_set_dict):
+        if input_param == '-b':
+            self.__vis.display_bar(data_set_dict)
+        elif input_param == '-l':
+            self.__vis.display_line(data_set_dict)
+        elif input_param == '-p':
+            self.__vis.display_pie(data_set_dict)
+        elif input_param == '-r':
+            self.__vis.display_radar(data_set_dict)
+
     def display(self, line=None):
         try:
             if line:
@@ -22,15 +32,7 @@ class Controller(object):
                                 data = self.__db.get(data_set)
                                 clean_data = self.__parser.scrub_db_list(data)
                                 data_set_dict[data_set] = clean_data
-
-                            if input_params[0] == '-b':
-                                self.__vis.display_bar(data_set_dict)
-                            elif input_params[0] == '-l':
-                                self.__vis.display_line(data_set_dict)
-                            elif input_params[0] == '-p':
-                                self.__vis.display_pie(data_set_dict)
-                            elif input_params[0] == '-r':
-                                self.__vis.display_radar(data_set_dict)
+                            self.__display_chart(input_params[0], data_set_dict)
                         else:
                             raise Exception("-- Invalid flag.")
                     else:
