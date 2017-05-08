@@ -25,8 +25,11 @@ class Validator(object):
                               '-p',
                               '-r']
 
-    def get_valid_cols(self):
-        return self.__valid_cols
+    def is_valid_column(self, input_param):
+        result = False
+        if input_param in self.__regex_lib:
+            result = True
+        return result
 
     def get_valid_flags(self):
         return self.__valid_flags

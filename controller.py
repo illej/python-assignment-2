@@ -8,13 +8,7 @@ class Controller(object):
         self.__vis = vis
         self.__serial = serial
 
-    def isValidColumn(self, input_param):
-        result = False
-        if input_param in self.__validator.get_valid_cols():
-            result = True
-        return result
-
-    def isValidFlag(self, input_param):
+    def is_valid_flag(self, input_param):
         result = False
         if input_param in self.__validator.get_valid_flags():
             result = True
@@ -27,7 +21,7 @@ class Controller(object):
                 input_params = line.split()
                 # print("input: ", input)
                 if len(input_params) > 1:
-                    if self.isValidColumn(input_params[1]):  # input_params[1] in self.__validator.get_valid_cols():
+                    if self.__validator.is_valid_column(input_params[1]):  # input_params[1] in self.__validator.get_valid_cols():
                         if self.isValidFlag(input_params[0]):  # if input_params[0] in self.__validator.get_valid_flags():
                             iterinput = iter(input_params)
                             next(iterinput)
