@@ -7,10 +7,15 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.coverage" afterPath="$PROJECT_DIR$/.coverage" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controller.py" afterPath="$PROJECT_DIR$/controller.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/cmdview_py.html" afterPath="$PROJECT_DIR$/htmlcov/cmdview_py.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/controller_py.html" afterPath="$PROJECT_DIR$/htmlcov/controller_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/dataparser_py.html" afterPath="$PROJECT_DIR$/htmlcov/dataparser_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/fileview_py.html" afterPath="$PROJECT_DIR$/htmlcov/fileview_py.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/index.html" afterPath="$PROJECT_DIR$/htmlcov/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/status.json" afterPath="$PROJECT_DIR$/htmlcov/status.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/unittests_py.html" afterPath="$PROJECT_DIR$/htmlcov/unittests_py.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/validator_py.html" afterPath="$PROJECT_DIR$/htmlcov/validator_py.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/htmlcov/view_py.html" afterPath="$PROJECT_DIR$/htmlcov/view_py.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/validator.py" afterPath="$PROJECT_DIR$/validator.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -44,8 +49,8 @@
           <file leaf-file-name="controller.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/controller.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+                <state relative-caret-position="210">
+                  <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
                   <folding />
                 </state>
               </provider>
@@ -102,8 +107,8 @@
           <file leaf-file-name="validator.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/validator.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="120">
-                  <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+                <state relative-caret-position="75">
+                  <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -137,8 +142,8 @@
         <option value="$PROJECT_DIR$/serializer.py" />
         <option value="$PROJECT_DIR$/unittests.py" />
         <option value="$PROJECT_DIR$/visualiser.py" />
-        <option value="$PROJECT_DIR$/validator.py" />
         <option value="$PROJECT_DIR$/controller.py" />
+        <option value="$PROJECT_DIR$/validator.py" />
       </list>
     </option>
   </component>
@@ -768,18 +773,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/validator.py">
+    <entry file="file://$PROJECT_DIR$/controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="14" column="30" lean-forward="false" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        <state relative-caret-position="210">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller.py">
+    <entry file="file://$PROJECT_DIR$/validator.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="41" lean-forward="true" selection-start-line="21" selection-start-column="41" selection-end-line="21" selection-end-column="41" />
+        <state relative-caret-position="75">
+          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
           <folding />
         </state>
       </provider>

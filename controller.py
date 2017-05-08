@@ -8,11 +8,11 @@ class Controller(object):
         self.__vis = vis
         self.__serial = serial
 
-    def is_valid_flag(self, input_param):
-        result = False
-        if input_param in self.__validator.get_valid_flags():
-            result = True
-        return result
+    # def is_valid_flag(self, input_param):
+    #     result = False
+    #     if input_param in self.__validator.get_valid_flags():
+    #         result = True
+    #     return result
 
     def display(self, line=None):
         try:
@@ -22,7 +22,7 @@ class Controller(object):
                 # print("input: ", input)
                 if len(input_params) > 1:
                     if self.__validator.is_valid_column(input_params[1]):  # input_params[1] in self.__validator.get_valid_cols():
-                        if self.isValidFlag(input_params[0]):  # if input_params[0] in self.__validator.get_valid_flags():
+                        if self.__validator.is_valid_flag(input_params[0]):  # if input_params[0] in self.__validator.get_valid_flags():
                             iterinput = iter(input_params)
                             next(iterinput)
                             for data_set in iterinput:

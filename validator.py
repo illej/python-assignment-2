@@ -31,8 +31,11 @@ class Validator(object):
             result = True
         return result
 
-    def get_valid_flags(self):
-        return self.__valid_flags
+    def is_valid_flag(self, input_param):
+        result = False
+        if input_param in self.__valid_flags:
+            result = True
+        return result
 
     def get_valid_sets(self):
         try:
