@@ -3,9 +3,9 @@ from view import View
 import sys
 
 
-class CmdView(View, Cmd):
+class CmdView(Cmd):
     def __init__(self):
-        super(View, self).__init__()
+        super(Cmd).__init__()
         self.intro = "Welcome.\n-- Type 'help' for a list of commands."
         self.prompt = "> "
         self.__controller = None
@@ -82,16 +82,9 @@ class CmdView(View, Cmd):
             <folder>    Changes the cwd to the specified sub-folder, and reads any .txt files.
         """
         try:
-            self.get(line)
+            self.__controller.get(line)
         except Exception as e:
             print('cmd:', e)
-
-    def get(self, line):
-        self.__controller.get(line)
-
-    def set(self, **kwargs):
-        # TODO: print data to console as a table?
-        pass
 
     def do_display(self, line):
         """

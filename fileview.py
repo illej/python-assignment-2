@@ -3,9 +3,7 @@ from glob import glob
 import os
 
 
-class FileView(View):
-    def __init__(self):
-        super(View, self).__init__()
+class FileView(object):
 
     def get(self, line):
         """
@@ -40,10 +38,6 @@ class FileView(View):
                     for data_set in data_sets:
                         raw_file_list.append(data_set)
             return raw_file_list
-
-    def set(self, **kwargs):
-        # TODO: write data to file?
-        pass
 
 if __name__ == '__main__':  # pragma: no cover
     import doctest

@@ -2,9 +2,8 @@ import sqlite3
 from view import View
 
 
-class DatabaseView(View):
+class DatabaseView(object):
     def __init__(self, db):
-        super(View, self).__init__()
         self.__db = db
         self.__connection = None
         self.__cursor = None
