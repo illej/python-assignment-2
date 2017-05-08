@@ -20,20 +20,10 @@ class Validator(object):
                              'sales',
                              'bmi',
                              'birthday']
-        self.__valid_flags = ['-b',
-                              '-l',
-                              '-p',
-                              '-r']
 
     def is_valid_column(self, input_param):
         result = False
         if input_param in self.__regex_lib:
-            result = True
-        return result
-
-    def is_valid_flag(self, input_param):
-        result = False
-        if input_param in self.__valid_flags:
             result = True
         return result
 

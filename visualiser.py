@@ -23,3 +23,8 @@ class Visualiser(object):
             chart.title = ''.join(title_builder)[:-4]
         return chart
 
+    def is_valid_flag(self, input_param):
+        result = False
+        if input_param in self.__charts:
+            result = True
+        return result
