@@ -15,8 +15,8 @@ class Controller(object):
                 input_params = line.split()
                 # print("input: ", input)
                 if len(input_params) > 1:
-                    if self.__validator.is_valid_column(input_params[1]):  # input_params[1] in self.__validator.get_valid_cols():
-                        if self.__vis.is_valid_flag(input_params[0]):  # if input_params[0] in self.__validator.get_valid_flags():
+                    if self.__validator.is_valid_column(input_params[1]):
+                        if self.__vis.is_valid_flag(input_params[0]):
                             iterinput = iter(input_params)
                             next(iterinput)
                             for data_set in iterinput:

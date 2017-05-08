@@ -13,13 +13,6 @@ class Validator(object):
         # [0-3][0-9]-[0-1][0-9]-[0-9]{4}
         self.__valid_dicts_list = []
         self.__valid_dict = {}
-        self.__valid_cols = ['empid',
-                             'gender',
-                             'age',
-                             'salary',
-                             'sales',
-                             'bmi',
-                             'birthday']
 
     def is_valid_column(self, input_param):
         result = False
