@@ -1,11 +1,10 @@
 from cmd import Cmd
-from view import View
 import sys
 
 
 class CmdView(Cmd):
     def __init__(self):
-        super(Cmd).__init__()
+        Cmd.__init__(self)
         self.intro = "Welcome.\n-- Type 'help' for a list of commands."
         self.prompt = "> "
         self.__controller = None

@@ -8,7 +8,6 @@ from dataparser import DataParser
 from validator import Validator
 from databaseview import DatabaseView
 from visualiser import Visualiser
-from view import View
 from serializer import Serializer
 
 
@@ -395,22 +394,22 @@ class TestInterpreter(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertEqual(expected, actual)
 
-    def test_29_view(self):
-        c = self.concreter(View)
-        expected = 'dummy_concrete_View'
-        actual = c.__name__
-
-        self.assertEqual(expected, actual)
-
-    def test_30_view_get(self):
-        View.__abstractmethods__ = set()
-
-        self.assertRaises(NotImplementedError, View().get, 'socks')
-
-    def test_31_view_set(self):
-        View.__abstractmethods__ = set()
-
-        self.assertRaises(NotImplementedError, View().set, 'pants')
+    # def test_29_view(self):
+    #     c = self.concreter(View)
+    #     expected = 'dummy_concrete_View'
+    #     actual = c.__name__
+    #
+    #     self.assertEqual(expected, actual)
+    #
+    # def test_30_view_get(self):
+    #     View.__abstractmethods__ = set()
+    #
+    #     self.assertRaises(NotImplementedError, View().get, 'socks')
+    #
+    # def test_31_view_set(self):
+    #     View.__abstractmethods__ = set()
+    #
+    #     self.assertRaises(NotImplementedError, View().set, 'pants')
 
     # CmdView
     def test_32_cmdview_init_get(self):

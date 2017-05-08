@@ -1,4 +1,3 @@
-from view import View
 from glob import glob
 import os
 

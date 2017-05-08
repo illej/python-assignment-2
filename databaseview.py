@@ -1,5 +1,4 @@
 import sqlite3
-from view import View
 
 
 class DatabaseView(object):
