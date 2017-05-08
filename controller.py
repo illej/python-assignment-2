@@ -63,7 +63,7 @@ class Controller(object):
     # NEW FILE READING METHOD
     def get(self, line):
         try:
-            data_sets = self.__fileview.get(line)
+            data_sets = self.__fileview.read_file(line)
             for index, data_set in enumerate(data_sets):  # TODO: don't need enumeration?
                 self.__parser.parse_raw_data(data_set)
         except Exception as e:

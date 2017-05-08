@@ -216,7 +216,7 @@
 <p id="t63" class="pln">    <span class="com"># NEW FILE READING METHOD</span><span class="strut">&nbsp;</span></p>
 <p id="t64" class="stm run hide_run">    <span class="key">def</span> <span class="nam">get</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">line</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t65" class="stm run hide_run">        <span class="key">try</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t66" class="stm run hide_run">            <span class="nam">data_sets</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__fileview</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="nam">line</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t66" class="stm run hide_run">            <span class="nam">data_sets</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__fileview</span><span class="op">.</span><span class="nam">read_file</span><span class="op">(</span><span class="nam">line</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t67" class="stm run hide_run">            <span class="key">for</span> <span class="nam">index</span><span class="op">,</span> <span class="nam">data_set</span> <span class="key">in</span> <span class="nam">enumerate</span><span class="op">(</span><span class="nam">data_sets</span><span class="op">)</span><span class="op">:</span>  <span class="com"># TODO: don't need enumeration?</span><span class="strut">&nbsp;</span></p>
 <p id="t68" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">__parser</span><span class="op">.</span><span class="nam">parse_raw_data</span><span class="op">(</span><span class="nam">data_set</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t69" class="stm run hide_run">        <span class="key">except</span> <span class="nam">Exception</span> <span class="key">as</span> <span class="nam">e</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -240,7 +240,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 10:35
+            created at 2017-05-09 11:33
         </p>
     </div>
 </div>
