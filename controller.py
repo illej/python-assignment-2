@@ -1,11 +1,12 @@
 class Controller(object):
-    def __init__(self, cmdview, fileview, parser, validator, db, vis):
+    def __init__(self, cmdview, fileview, parser, validator, db, vis, serial):
         self.__cmdview = cmdview
         self.__fileview = fileview
         self.__parser = parser
         self.__validator = validator
         self.__db = db
         self.__vis = vis
+        self.__serial = serial
 
     def display(self, line=None):
         try:
@@ -74,30 +75,5 @@ class Controller(object):
         # print(clean)
 
     def serialize(self, line):
-        try:
-            import pickle
-            args = line.split()
-            if len(args) == 1 and args[0] != '-r':
-                # write
-                filename = args[0] + '.pickle'
-                db_contents = self.__db.get('*')
-                if db_contents:
-                    with open(filename, 'wb') as p_file:
-                        pickle.dump(db_contents, p_file)
-                    print('-- Database pickled!\n\t-> as filename: {}.'.format(filename))
-                else:
-                    raise Exception('* Database is empty. Nothing to serialize.')
-            elif len(args) == 2 and args[0] == '-r':
-                # read
-                filename = args[1] + '.pickle'
-                try:
-                    with open(filename, 'rb') as p_file:
-                        data = pickle.load(p_file)
-                    output = "\n".join(str(i) for i in data)
-                    print(output)
-                except Exception as e:
-                    print(e)
-            else:
-                raise Exception("* Invalid parameters.\n-- Type 'help serialize' for more details.")
-        except Exception as e:
-            print(e)
+        db_contents = self.__db.get('*')
+        self.__serial.serialize(line, db_contents)

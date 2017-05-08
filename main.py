@@ -5,6 +5,7 @@ from dataparser import DataParser
 from validator import Validator
 from databaseview import DatabaseView
 from visualiser import Visualiser
+from serializer import Serializer
 
 if __name__ == "__main__":
     parser = DataParser()
@@ -13,8 +14,9 @@ if __name__ == "__main__":
     validator = Validator()
     db = DatabaseView("test.db")
     vis = Visualiser()
+    serial = Serializer()
 
-    con = Controller(cmd_view, file_view, parser, validator, db, vis)
+    con = Controller(cmd_view, file_view, parser, validator, db, vis, serial)
     cmd_view.set_controller(con)
 
     # run program

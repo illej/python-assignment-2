@@ -9,6 +9,7 @@ from validator import Validator
 from databaseview import DatabaseView
 from visualiser import Visualiser
 from view import View
+from serializer import Serializer
 
 
 class TestInterpreter(unittest.TestCase):
@@ -20,12 +21,14 @@ class TestInterpreter(unittest.TestCase):
         self.db = DatabaseView("test.db")
         self.vis = Visualiser()
         self.val = Validator()
+        self.serial = Serializer()
         self.controller = Controller(self.cmd_view,
                                      self.file_view,
                                      self.parser,
                                      self.validator,
                                      self.db,
-                                     self.vis)
+                                     self.vis,
+                                     self.serial)
         self.init()
 
     def tearDown(self):
@@ -37,6 +40,7 @@ class TestInterpreter(unittest.TestCase):
         self.vis = None
         self.val = None
         self.controller = None
+        self.serial = None
 
     def init(self):
         sys.stdout = io.StringIO()
@@ -160,7 +164,8 @@ class TestInterpreter(unittest.TestCase):
                                      DataParser(),
                                      self.validator,
                                      self.db,
-                                     self.vis)
+                                     self.vis,
+                                     self.serial)
         captured_output = io.StringIO()
         sys.stdout = captured_output
         self.controller.validate()
@@ -178,7 +183,8 @@ class TestInterpreter(unittest.TestCase):
                                      self.parser,
                                      Validator(),
                                      self.db,
-                                     self.vis)
+                                     self.vis,
+                                     self.serial)
         captured_output = io.StringIO()
         sys.stdout = captured_output
         self.controller.commit()
