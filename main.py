@@ -3,7 +3,7 @@ from cmdview import CmdView
 from file_reader import FileReader
 from dataparser import DataParser
 from validator import Validator
-from databaseview import DatabaseView
+from database import Database
 from visualiser import Visualiser
 from serializer import Serializer
 
@@ -12,7 +12,7 @@ if __name__ == "__main__":
     cmd_view = CmdView()
     file_reader = FileReader()
     validator = Validator()
-    db = DatabaseView("test.db")
+    db = Database("test.db")
     vis = Visualiser()
     serial = Serializer()
 

@@ -618,7 +618,7 @@
 <p id="t6" class="stm run hide_run"><span class="key">from</span> <span class="nam">file_reader</span> <span class="key">import</span> <span class="nam">FileReader</span><span class="strut">&nbsp;</span></p>
 <p id="t7" class="stm run hide_run"><span class="key">from</span> <span class="nam">dataparser</span> <span class="key">import</span> <span class="nam">DataParser</span><span class="strut">&nbsp;</span></p>
 <p id="t8" class="stm run hide_run"><span class="key">from</span> <span class="nam">validator</span> <span class="key">import</span> <span class="nam">Validator</span><span class="strut">&nbsp;</span></p>
-<p id="t9" class="stm run hide_run"><span class="key">from</span> <span class="nam">databaseview</span> <span class="key">import</span> <span class="nam">DatabaseView</span><span class="strut">&nbsp;</span></p>
+<p id="t9" class="stm run hide_run"><span class="key">from</span> <span class="nam">database</span> <span class="key">import</span> <span class="nam">Database</span><span class="strut">&nbsp;</span></p>
 <p id="t10" class="stm run hide_run"><span class="key">from</span> <span class="nam">visualiser</span> <span class="key">import</span> <span class="nam">Visualiser</span><span class="strut">&nbsp;</span></p>
 <p id="t11" class="stm run hide_run"><span class="key">from</span> <span class="nam">serializer</span> <span class="key">import</span> <span class="nam">Serializer</span><span class="strut">&nbsp;</span></p>
 <p id="t12" class="pln"><span class="strut">&nbsp;</span></p>
@@ -627,14 +627,14 @@
 <p id="t15" class="stm run hide_run">    <span class="key">def</span> <span class="nam">setUp</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t16" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">parser</span> <span class="op">=</span> <span class="nam">DataParser</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t17" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span> <span class="op">=</span> <span class="nam">CmdView</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t18" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span> <span class="op">=</span> <span class="nam">FileReader</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t18" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">file_reader</span> <span class="op">=</span> <span class="nam">FileReader</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t19" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">validator</span> <span class="op">=</span> <span class="nam">Validator</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t20" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span> <span class="op">=</span> <span class="nam">DatabaseView</span><span class="op">(</span><span class="str">"test.db"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t20" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span> <span class="op">=</span> <span class="nam">Database</span><span class="op">(</span><span class="str">"test.db"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t21" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">vis</span> <span class="op">=</span> <span class="nam">Visualiser</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t22" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">val</span> <span class="op">=</span> <span class="nam">Validator</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t23" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">serial</span> <span class="op">=</span> <span class="nam">Serializer</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t24" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">controller</span> <span class="op">=</span> <span class="nam">Controller</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t25" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t25" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">file_reader</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t26" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">parser</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t27" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">validator</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t28" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
@@ -645,7 +645,7 @@
 <p id="t33" class="stm run hide_run">    <span class="key">def</span> <span class="nam">tearDown</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t34" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">parser</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
 <p id="t35" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
-<p id="t36" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
+<p id="t36" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">file_reader</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
 <p id="t37" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">validator</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
 <p id="t38" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
 <p id="t39" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">vis</span> <span class="op">=</span> <span class="key">None</span><span class="strut">&nbsp;</span></p>
@@ -771,7 +771,7 @@
 <p id="t159" class="pln">    <span class="com"># Controller.validate()</span><span class="strut">&nbsp;</span></p>
 <p id="t160" class="stm run hide_run">    <span class="key">def</span> <span class="nam">test_10_controller_validate_fail</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t161" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">controller</span> <span class="op">=</span> <span class="nam">Controller</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t162" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t162" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">file_reader</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t163" class="pln">                                     <span class="nam">DataParser</span><span class="op">(</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t164" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">validator</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t165" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
@@ -790,7 +790,7 @@
 <p id="t178" class="pln">    <span class="com"># Controller.commit()</span><span class="strut">&nbsp;</span></p>
 <p id="t179" class="stm run hide_run">    <span class="key">def</span> <span class="nam">test_11_controller_commit_fail</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t180" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">controller</span> <span class="op">=</span> <span class="nam">Controller</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
-<p id="t181" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
+<p id="t181" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">file_reader</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t182" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">parser</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t183" class="pln">                                     <span class="nam">Validator</span><span class="op">(</span><span class="op">)</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
 <p id="t184" class="pln">                                     <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">,</span><span class="strut">&nbsp;</span></p>
@@ -974,7 +974,7 @@
 <p id="t362" class="stm run hide_run">        <span class="nam">captured</span> <span class="op">=</span> <span class="nam">io</span><span class="op">.</span><span class="nam">StringIO</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t363" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">captured</span><span class="strut">&nbsp;</span></p>
 <p id="t364" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t365" class="stm run hide_run">        <span class="nam">DatabaseView</span><span class="op">(</span><span class="num">1</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t365" class="stm run hide_run">        <span class="nam">Database</span><span class="op">(</span><span class="num">1</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t366" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t367" class="stm run hide_run">        <span class="nam">expected</span> <span class="op">=</span> <span class="str">'argument 1 must be str, not int\n'</span><span class="strut">&nbsp;</span></p>
 <p id="t368" class="stm run hide_run">        <span class="nam">actual</span> <span class="op">=</span> <span class="nam">captured</span><span class="op">.</span><span class="nam">getvalue</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -1158,7 +1158,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 13:02
+            created at 2017-05-09 13:08
         </p>
     </div>
 </div>

@@ -6,7 +6,7 @@ from cmdview import CmdView
 from file_reader import FileReader
 from dataparser import DataParser
 from validator import Validator
-from databaseview import DatabaseView
+from database import Database
 from visualiser import Visualiser
 from serializer import Serializer
 
@@ -17,7 +17,7 @@ class TestInterpreter(unittest.TestCase):
         self.cmd_view = CmdView()
         self.file_reader = FileReader()
         self.validator = Validator()
-        self.db = DatabaseView("test.db")
+        self.db = Database("test.db")
         self.vis = Visualiser()
         self.val = Validator()
         self.serial = Serializer()
@@ -362,7 +362,7 @@ class TestInterpreter(unittest.TestCase):
         captured = io.StringIO()
         sys.stdout = captured
 
-        DatabaseView(1)
+        Database(1)
 
         expected = 'argument 1 must be str, not int\n'
         actual = captured.getvalue()
