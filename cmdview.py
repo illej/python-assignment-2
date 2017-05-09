@@ -25,7 +25,7 @@ class CmdView(Cmd):
             if arg == '-r':
                 self.do_rebuild_db('')
             elif arg == '-g':
-                self.do_get('')
+                self.do_read('')
             elif arg == '-v':
                 self.do_validate('')
             elif arg == '-c':
@@ -70,9 +70,9 @@ class CmdView(Cmd):
         """
         self.__controller.commit()
 
-    def do_get(self, line):
+    def do_read(self, line):
         """
-        Syntax: get [line]
+        Syntax: read [line]
             -> Reads and processes data from .txt file(s).
 
         :param [line]: Optional

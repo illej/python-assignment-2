@@ -478,11 +478,11 @@ class TestInterpreter(unittest.TestCase):
         sys.stdout = sys.__stdout__
         self.assertRegex(text, regex)
 
-    def test_37_cmdview_do_get(self):
+    def test_37_cmdview_do_read(self):
         captured = io.StringIO()
         sys.stdout = captured
 
-        self.cmd_view.do_get('pickle-pee')
+        self.cmd_view.do_read('pickle-pee')
 
         expected = "cmd: 'NoneType' object has no attribute 'get'\n"
         actual = captured.getvalue()

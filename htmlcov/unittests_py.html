@@ -1090,11 +1090,11 @@
 <p id="t478" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">sys</span><span class="op">.</span><span class="nam">__stdout__</span><span class="strut">&nbsp;</span></p>
 <p id="t479" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">assertRegex</span><span class="op">(</span><span class="nam">text</span><span class="op">,</span> <span class="nam">regex</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t480" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t481" class="stm run hide_run">    <span class="key">def</span> <span class="nam">test_37_cmdview_do_get</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t481" class="stm run hide_run">    <span class="key">def</span> <span class="nam">test_37_cmdview_do_read</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t482" class="stm run hide_run">        <span class="nam">captured</span> <span class="op">=</span> <span class="nam">io</span><span class="op">.</span><span class="nam">StringIO</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t483" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">captured</span><span class="strut">&nbsp;</span></p>
 <p id="t484" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t485" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span><span class="op">.</span><span class="nam">do_get</span><span class="op">(</span><span class="str">'pickle-pee'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t485" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span><span class="op">.</span><span class="nam">do_read</span><span class="op">(</span><span class="str">'pickle-pee'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t486" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t487" class="stm run hide_run">        <span class="nam">expected</span> <span class="op">=</span> <span class="str">"cmd: 'NoneType' object has no attribute 'get'\n"</span><span class="strut">&nbsp;</span></p>
 <p id="t488" class="stm run hide_run">        <span class="nam">actual</span> <span class="op">=</span> <span class="nam">captured</span><span class="op">.</span><span class="nam">getvalue</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -1158,7 +1158,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 12:20
+            created at 2017-05-09 12:31
         </p>
     </div>
 </div>

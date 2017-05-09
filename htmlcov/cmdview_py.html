@@ -248,7 +248,7 @@
 <p id="t25" class="stm run hide_run">            <span class="key">if</span> <span class="nam">arg</span> <span class="op">==</span> <span class="str">'-r'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t26" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">do_rebuild_db</span><span class="op">(</span><span class="str">''</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t27" class="stm run hide_run">            <span class="key">elif</span> <span class="nam">arg</span> <span class="op">==</span> <span class="str">'-g'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t28" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">do_get</span><span class="op">(</span><span class="str">''</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t28" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">do_read</span><span class="op">(</span><span class="str">''</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t29" class="stm run hide_run">            <span class="key">elif</span> <span class="nam">arg</span> <span class="op">==</span> <span class="str">'-v'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t30" class="stm run hide_run">                <span class="nam">self</span><span class="op">.</span><span class="nam">do_validate</span><span class="op">(</span><span class="str">''</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t31" class="stm run hide_run">            <span class="key">elif</span> <span class="nam">arg</span> <span class="op">==</span> <span class="str">'-c'</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
@@ -293,9 +293,9 @@
 <p id="t70" class="pln"><span class="str">        """</span><span class="strut">&nbsp;</span></p>
 <p id="t71" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">__controller</span><span class="op">.</span><span class="nam">commit</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t72" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t73" class="stm run hide_run">    <span class="key">def</span> <span class="nam">do_get</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">line</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
+<p id="t73" class="stm run hide_run">    <span class="key">def</span> <span class="nam">do_read</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">line</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t74" class="pln">        <span class="str">"""</span><span class="strut">&nbsp;</span></p>
-<p id="t75" class="pln"><span class="str">        Syntax: get [line]</span><span class="strut">&nbsp;</span></p>
+<p id="t75" class="pln"><span class="str">        Syntax: read [line]</span><span class="strut">&nbsp;</span></p>
 <p id="t76" class="pln"><span class="str">            -> Reads and processes data from .txt file(s).</span><span class="strut">&nbsp;</span></p>
 <p id="t77" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t78" class="pln"><span class="str">        :param [line]: Optional</span><span class="strut">&nbsp;</span></p>
@@ -380,7 +380,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 10:58
+            created at 2017-05-09 12:31
         </p>
     </div>
 </div>
