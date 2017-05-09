@@ -33,7 +33,7 @@ class DatabaseView(object):
         except Exception as e:
             print(e)
 
-    def set(self, data_list):
+    def insert(self, data_list):
         try:
             sql = "INSERT INTO employee (" \
                   "'id'," \

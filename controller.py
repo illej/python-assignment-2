@@ -52,7 +52,7 @@ class Controller(object):
         try:
             valid_data = self.__validator.get_valid_sets()
             for data_set in valid_data:
-                self.__db.set(data_set)
+                self.__db.insert(data_set)
         except Exception as e:
             print(e)
             print("* Could not commit data to the database.\n-- Type 'help commit' for more details.")

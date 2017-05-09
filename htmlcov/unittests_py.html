@@ -986,7 +986,7 @@
 <p id="t374" class="stm run hide_run">        <span class="nam">captured</span> <span class="op">=</span> <span class="nam">io</span><span class="op">.</span><span class="nam">StringIO</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t375" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">captured</span><span class="strut">&nbsp;</span></p>
 <p id="t376" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t377" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">.</span><span class="nam">set</span><span class="op">(</span><span class="op">[</span><span class="str">'hi'</span><span class="op">,</span> <span class="str">'poop'</span><span class="op">,</span> <span class="str">'socks'</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t377" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">.</span><span class="nam">insert</span><span class="op">(</span><span class="op">[</span><span class="str">'hi'</span><span class="op">,</span> <span class="str">'poop'</span><span class="op">,</span> <span class="str">'socks'</span><span class="op">]</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t378" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t379" class="stm run hide_run">        <span class="nam">expected</span> <span class="op">=</span> <span class="str">''</span><span class="strut">&nbsp;</span></p>
 <p id="t380" class="stm run hide_run">        <span class="nam">actual</span> <span class="op">=</span> <span class="nam">captured</span><span class="op">.</span><span class="nam">getvalue</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -1158,7 +1158,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 10:58
+            created at 2017-05-09 12:02
         </p>
     </div>
 </div>

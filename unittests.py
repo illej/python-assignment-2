@@ -374,7 +374,7 @@ class TestInterpreter(unittest.TestCase):
         captured = io.StringIO()
         sys.stdout = captured
 
-        self.db.set(['hi', 'poop', 'socks'])
+        self.db.insert(['hi', 'poop', 'socks'])
 
         expected = ''
         actual = captured.getvalue()
