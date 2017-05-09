@@ -57,7 +57,7 @@ class DatabaseView(object):
             # print('insert error:', e)
             pass
 
-    def get(self, column):
+    def retrieve(self, column):
         all_rows = []
         try:
             sql = "select {} from employee".format(column)

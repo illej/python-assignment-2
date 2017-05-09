@@ -173,7 +173,7 @@
 <p id="t20" class="stm run hide_run">                            <span class="nam">iterinput</span> <span class="op">=</span> <span class="nam">iter</span><span class="op">(</span><span class="nam">input_params</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t21" class="stm run hide_run">                            <span class="nam">next</span><span class="op">(</span><span class="nam">iterinput</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t22" class="stm run hide_run">                            <span class="key">for</span> <span class="nam">data_set</span> <span class="key">in</span> <span class="nam">iterinput</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t23" class="stm run hide_run">                                <span class="nam">data</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__db</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="nam">data_set</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t23" class="stm run hide_run">                                <span class="nam">data</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__db</span><span class="op">.</span><span class="nam">retrieve</span><span class="op">(</span><span class="nam">data_set</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t24" class="stm run hide_run">                                <span class="nam">clean_data</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__parser</span><span class="op">.</span><span class="nam">scrub_db_list</span><span class="op">(</span><span class="nam">data</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t25" class="stm run hide_run">                                <span class="nam">data_set_dict</span><span class="op">[</span><span class="nam">data_set</span><span class="op">]</span> <span class="op">=</span> <span class="nam">clean_data</span><span class="strut">&nbsp;</span></p>
 <p id="t26" class="stm run hide_run">                            <span class="nam">self</span><span class="op">.</span><span class="nam">__vis</span><span class="op">.</span><span class="nam">display_chart</span><span class="op">(</span><span class="nam">input_params</span><span class="op">[</span><span class="num">0</span><span class="op">]</span><span class="op">,</span> <span class="nam">data_set_dict</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -223,12 +223,12 @@
 <p id="t70" class="stm run hide_run">            <span class="key">pass</span><span class="strut">&nbsp;</span></p>
 <p id="t71" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t72" class="stm run hide_run">    <span class="key">def</span> <span class="nam">query</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">line</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t73" class="stm run hide_run">        <span class="nam">print</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">__db</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="nam">line</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t73" class="stm run hide_run">        <span class="nam">print</span><span class="op">(</span><span class="nam">self</span><span class="op">.</span><span class="nam">__db</span><span class="op">.</span><span class="nam">retrieve</span><span class="op">(</span><span class="nam">line</span><span class="op">)</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t74" class="pln">        <span class="com"># clean = self.__parser.scrub_db_list(self.__db.get(line))</span><span class="strut">&nbsp;</span></p>
 <p id="t75" class="pln">        <span class="com"># print(clean)</span><span class="strut">&nbsp;</span></p>
 <p id="t76" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t77" class="stm run hide_run">    <span class="key">def</span> <span class="nam">serialize</span><span class="op">(</span><span class="nam">self</span><span class="op">,</span> <span class="nam">line</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
-<p id="t78" class="stm run hide_run">        <span class="nam">db_contents</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__db</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">'*'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t78" class="stm run hide_run">        <span class="nam">db_contents</span> <span class="op">=</span> <span class="nam">self</span><span class="op">.</span><span class="nam">__db</span><span class="op">.</span><span class="nam">retrieve</span><span class="op">(</span><span class="str">'*'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t79" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">__serial</span><span class="op">.</span><span class="nam">serialize</span><span class="op">(</span><span class="nam">line</span><span class="op">,</span> <span class="nam">db_contents</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 
             </td>
@@ -240,7 +240,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 12:02
+            created at 2017-05-09 12:11
         </p>
     </div>
 </div>

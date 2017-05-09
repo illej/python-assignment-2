@@ -20,7 +20,7 @@ class Controller(object):
                             iterinput = iter(input_params)
                             next(iterinput)
                             for data_set in iterinput:
-                                data = self.__db.get(data_set)
+                                data = self.__db.retrieve(data_set)
                                 clean_data = self.__parser.scrub_db_list(data)
                                 data_set_dict[data_set] = clean_data
                             self.__vis.display_chart(input_params[0], data_set_dict)
@@ -70,10 +70,10 @@ class Controller(object):
             pass
 
     def query(self, line):
-        print(self.__db.get(line))
+        print(self.__db.retrieve(line))
         # clean = self.__parser.scrub_db_list(self.__db.get(line))
         # print(clean)
 
     def serialize(self, line):
-        db_contents = self.__db.get('*')
+        db_contents = self.__db.retrieve('*')
         self.__serial.serialize(line, db_contents)

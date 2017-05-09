@@ -998,7 +998,7 @@
 <p id="t386" class="stm run hide_run">        <span class="nam">captured</span> <span class="op">=</span> <span class="nam">io</span><span class="op">.</span><span class="nam">StringIO</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t387" class="stm run hide_run">        <span class="nam">sys</span><span class="op">.</span><span class="nam">stdout</span> <span class="op">=</span> <span class="nam">captured</span><span class="strut">&nbsp;</span></p>
 <p id="t388" class="pln"><span class="strut">&nbsp;</span></p>
-<p id="t389" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">'pickles'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t389" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span><span class="op">.</span><span class="nam">retrieve</span><span class="op">(</span><span class="str">'pickles'</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t390" class="pln"><span class="strut">&nbsp;</span></p>
 <p id="t391" class="stm run hide_run">        <span class="nam">expected</span> <span class="op">=</span> <span class="str">'no such column: pickles\n'</span><span class="strut">&nbsp;</span></p>
 <p id="t392" class="stm run hide_run">        <span class="nam">actual</span> <span class="op">=</span> <span class="nam">captured</span><span class="op">.</span><span class="nam">getvalue</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -1158,7 +1158,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 12:02
+            created at 2017-05-09 12:20
         </p>
     </div>
 </div>

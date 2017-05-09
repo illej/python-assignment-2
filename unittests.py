@@ -386,7 +386,7 @@ class TestInterpreter(unittest.TestCase):
         captured = io.StringIO()
         sys.stdout = captured
 
-        self.db.get('pickles')
+        self.db.retrieve('pickles')
 
         expected = 'no such column: pickles\n'
         actual = captured.getvalue()
