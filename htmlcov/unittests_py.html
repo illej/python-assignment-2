@@ -615,7 +615,7 @@
 <p id="t3" class="stm run hide_run"><span class="key">import</span> <span class="nam">sys</span><span class="strut">&nbsp;</span></p>
 <p id="t4" class="stm run hide_run"><span class="key">from</span> <span class="nam">controller</span> <span class="key">import</span> <span class="nam">Controller</span><span class="strut">&nbsp;</span></p>
 <p id="t5" class="stm run hide_run"><span class="key">from</span> <span class="nam">cmdview</span> <span class="key">import</span> <span class="nam">CmdView</span><span class="strut">&nbsp;</span></p>
-<p id="t6" class="stm run hide_run"><span class="key">from</span> <span class="nam">fileview</span> <span class="key">import</span> <span class="nam">FileView</span><span class="strut">&nbsp;</span></p>
+<p id="t6" class="stm run hide_run"><span class="key">from</span> <span class="nam">file_reader</span> <span class="key">import</span> <span class="nam">FileReader</span><span class="strut">&nbsp;</span></p>
 <p id="t7" class="stm run hide_run"><span class="key">from</span> <span class="nam">dataparser</span> <span class="key">import</span> <span class="nam">DataParser</span><span class="strut">&nbsp;</span></p>
 <p id="t8" class="stm run hide_run"><span class="key">from</span> <span class="nam">validator</span> <span class="key">import</span> <span class="nam">Validator</span><span class="strut">&nbsp;</span></p>
 <p id="t9" class="stm run hide_run"><span class="key">from</span> <span class="nam">databaseview</span> <span class="key">import</span> <span class="nam">DatabaseView</span><span class="strut">&nbsp;</span></p>
@@ -627,7 +627,7 @@
 <p id="t15" class="stm run hide_run">    <span class="key">def</span> <span class="nam">setUp</span><span class="op">(</span><span class="nam">self</span><span class="op">)</span><span class="op">:</span><span class="strut">&nbsp;</span></p>
 <p id="t16" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">parser</span> <span class="op">=</span> <span class="nam">DataParser</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t17" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">cmd_view</span> <span class="op">=</span> <span class="nam">CmdView</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
-<p id="t18" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span> <span class="op">=</span> <span class="nam">FileView</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
+<p id="t18" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">file_view</span> <span class="op">=</span> <span class="nam">FileReader</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t19" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">validator</span> <span class="op">=</span> <span class="nam">Validator</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t20" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">db</span> <span class="op">=</span> <span class="nam">DatabaseView</span><span class="op">(</span><span class="str">"test.db"</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
 <p id="t21" class="stm run hide_run">        <span class="nam">self</span><span class="op">.</span><span class="nam">vis</span> <span class="op">=</span> <span class="nam">Visualiser</span><span class="op">(</span><span class="op">)</span><span class="strut">&nbsp;</span></p>
@@ -1158,7 +1158,7 @@
     <div class="content">
         <p>
             <a class="nav" href="index.html">&#xab; index</a> &nbsp; &nbsp; <a class="nav" href="https://coverage.readthedocs.io">coverage.py v4.3.4</a>,
-            created at 2017-05-09 12:31
+            created at 2017-05-09 13:02
         </p>
     </div>
 </div>

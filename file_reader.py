@@ -2,11 +2,11 @@ from glob import glob
 import os
 
 
-class FileView(object):
+class FileReader(object):
 
     def read_file(self, line):
         """
-        >>> file_list = FileView().read_file('')
+        >>> file_list = FileReader().read_file('')
         ['data.txt', 'data2.txt', 'data3.txt', 'datalist.txt', 'file.txt']
         >>> file_list[0]
         'empid=D011\\ngender=m\\nage=29\\nsales=722\\nbmi=normal\\nsalary=320\\nbirthday=23-11-1987'

@@ -3,7 +3,7 @@ import io
 import sys
 from controller import Controller
 from cmdview import CmdView
-from fileview import FileView
+from file_reader import FileReader
 from dataparser import DataParser
 from validator import Validator
 from databaseview import DatabaseView
@@ -15,14 +15,14 @@ class TestInterpreter(unittest.TestCase):
     def setUp(self):
         self.parser = DataParser()
         self.cmd_view = CmdView()
-        self.file_view = FileView()
+        self.file_reader = FileReader()
         self.validator = Validator()
         self.db = DatabaseView("test.db")
         self.vis = Visualiser()
         self.val = Validator()
         self.serial = Serializer()
         self.controller = Controller(self.cmd_view,
-                                     self.file_view,
+                                     self.file_reader,
                                      self.parser,
                                      self.validator,
                                      self.db,
@@ -33,7 +33,7 @@ class TestInterpreter(unittest.TestCase):
     def tearDown(self):
         self.parser = None
         self.cmd_view = None
-        self.file_view = None
+        self.file_reader = None
         self.validator = None
         self.db = None
         self.vis = None
@@ -159,7 +159,7 @@ class TestInterpreter(unittest.TestCase):
     # Controller.validate()
     def test_10_controller_validate_fail(self):
         self.controller = Controller(self.cmd_view,
-                                     self.file_view,
+                                     self.file_reader,
                                      DataParser(),
                                      self.validator,
                                      self.db,
@@ -178,7 +178,7 @@ class TestInterpreter(unittest.TestCase):
     # Controller.commit()
     def test_11_controller_commit_fail(self):
         self.controller = Controller(self.cmd_view,
-                                     self.file_view,
+                                     self.file_reader,
                                      self.parser,
                                      Validator(),
                                      self.db,

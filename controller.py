@@ -1,7 +1,7 @@
 class Controller(object):
-    def __init__(self, cmdview, fileview, parser, validator, db, vis, serial):
+    def __init__(self, cmdview, file_reader, parser, validator, db, vis, serial):
         self.__cmdview = cmdview
-        self.__fileview = fileview
+        self.__file_reader = file_reader
         self.__parser = parser
         self.__validator = validator
         self.__db = db
@@ -63,7 +63,7 @@ class Controller(object):
     # NEW FILE READING METHOD
     def get(self, line):
         try:
-            data_sets = self.__fileview.read_file(line)
+            data_sets = self.__file_reader.read_file(line)
             for index, data_set in enumerate(data_sets):  # TODO: don't need enumeration?
                 self.__parser.parse_raw_data(data_set)
         except Exception as e:
