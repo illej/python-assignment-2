@@ -1,5 +1,4 @@
 class Serializer(object):
-
     def serialize(self, line, db_contents):
         try:
             import pickle

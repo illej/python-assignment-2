@@ -49,7 +49,7 @@ class TestInterpreter(unittest.TestCase):
         self.controller.commit()
         sys.stdout = sys.__stdout__
 
-    def concreter(self, abclass): # pragma: no cover
+    def concreter(self, abclass):  # pragma: no cover
         # """
         # >>> import abc
         # >>> class Abstract(metaclass=abc.ABCMeta):
@@ -63,7 +63,7 @@ class TestInterpreter(unittest.TestCase):
         # >>> c().bar() # doctest: +ELLIPSIS
         # (<abc_utils.Abstract object at 0x...>, (), {})
         # """
-        if not "__abstractmethods__" in abclass.__dict__:
+        if "__abstractmethods__" not in abclass.__dict__:
             return abclass
         new_dict = abclass.__dict__.copy()
         for abstractmethod in abclass.__abstractmethods__:
@@ -533,6 +533,7 @@ class TestInterpreter(unittest.TestCase):
 
         sys.stdout = sys.__stdout__
         self.assertRegex(text, regex)
+
 
 if __name__ == '__main__':  # pragma: no cover
     unittest.main(verbosity=True)
